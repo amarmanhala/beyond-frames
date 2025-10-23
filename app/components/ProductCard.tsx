@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ProductCard = ({ imageURL, description }: { imageURL: string, description: string }) => {
   return (
-    <div>
+    <div className="w-full cursor-pointer transition-transform duration-300 hover:scale-105">
       <Image
         src={imageURL}
         width={400}
