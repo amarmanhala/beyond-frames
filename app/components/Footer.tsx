@@ -1,41 +1,42 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12 px-8">
+    <footer className="bg-black text-white py-12 mt-16">
       <div className="max-w-7xl mx-auto">
         {/* Links Section */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
-          <Link href="/contact" className="hover:text-gray-400 transition-colors">
+        <div className="flex space-x-12">
+          <Link href="/contact" className="hover:underline transition-colors">
             Contact Us
           </Link>
-          <Link href="/story" className="hover:text-gray-400 transition-colors">
+          <Link href="/story" className="hover:underline transition-colors">
             Our Story
           </Link>
-          <Link href="/shop" className="hover:text-gray-400 transition-colors">
+          <Link href="/shop" className="hover:underline transition-colors">
             Shop
           </Link>
-          <Link href="/faqs" className="hover:text-gray-400 transition-colors">
+          <Link href="/faqs" className="hover:underline transition-colors">
             FAQs
           </Link>
-          <Link href="/sitemap" className="hover:text-gray-400 transition-colors">
+          <Link href="/sitemap" className="hover:underline transition-colors">
             Sitemap
           </Link>
-          <Link href="/orders" className="hover:text-gray-400 transition-colors">
+          <Link href="/orders" className="hover:underline transition-colors">
             My Order
           </Link>
         </div>
 
         {/* Country/Region */}
-        <div className="border-t border-gray-700 pt-8 mb-12">
-          <p className="text-gray-400 text-sm">
-            Country/Region: <span className="text-white">Canada</span>
+        <div className="border-t border-white pt-8 my-12">
+          <p className="text-sm">
+            Country/Region:{" "}
+            <span className="text-white font-semibold">Canada</span>
           </p>
         </div>
 
         {/* Brand Statement */}
         <div className="text-center">
-          <h2 className="text-5xl md:text-7xl font-bold">We Love Art</h2>
+          <h2 className="text-5xl md:text-9xl font-bold">We Love Art</h2>
         </div>
       </div>
     </footer>
