@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
-const ProductCard = ({ imageURL, description }: { imageURL: string, description: string }) => {
+const ProductCard = ({ imageURL, description, slug }: { imageURL: string, description: string, slug: string }) => {
   return (
-    <div className="w-full cursor-pointer transition-transform duration-300 hover:scale-105">
+    <Link href={`/product/${slug}`}>
+     <div className="w-full cursor-pointer transition-transform duration-300 hover:scale-105">
       <Image
         src={imageURL}
         width={400}
@@ -11,6 +13,8 @@ const ProductCard = ({ imageURL, description }: { imageURL: string, description:
       />
       <div className="text-center"><p className="py-4">{description}</p></div>
     </div>
+    </Link>
+   
   );
 };
 

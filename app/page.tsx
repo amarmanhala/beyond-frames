@@ -10,8 +10,6 @@ export default function Home() {
       <main>
        <HeroFrame />
        <Products />
-       <Newsletter />
-       <Footer />
       </main>
     </div>
   );

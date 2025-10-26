@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ProductCard from "./ProductCard";
 import { products } from "../products/arts";
+import { slugify } from "@/utils/slugify";
 
 const Products = () => {
   return (
@@ -9,7 +10,7 @@ const Products = () => {
       {products.map((product) => {
         return (
           <div key={product.id} className=" flex items-center justify-center">
-            <ProductCard imageURL={product.imageURL} description={product.description} />
+            <ProductCard imageURL={product.imageURL} description={product.description} slug={slugify(product.description)} />
           </div>
         );
       })}

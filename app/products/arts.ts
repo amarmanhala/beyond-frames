@@ -2,6 +2,7 @@ export const products = [
   {
     id: "1",
     description: "The Heights",
+    slug: "the-heights",
     price: "$25",
     size: {
       1: "8 X 12",
@@ -15,6 +16,7 @@ export const products = [
   {
     id: "2",
     description: "My Love",
+    slug: "my-love",
     price: "$25",
     size: {
       1: "8 X 12",
@@ -28,6 +30,7 @@ export const products = [
   {
     id: "3",
     description: "Slide",
+    slug: "slide",
     price: "$25",
     size: {
       1: "8 X 12",
@@ -41,6 +44,7 @@ export const products = [
   {
     id: "4",
     description: "Dancing Girl",
+    slug: "dancing-girl",
     price: "$25",
     size: {
       1: "8 X 12",
