@@ -3,7 +3,6 @@ import { products } from "@/app/products/arts";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  console.log("Static called");
   return products.map((product) => ({
     slug: product.slug, // or however you're generating slugs
   }));
@@ -22,7 +21,7 @@ export default async function Page({
   }
 
   return (
-    <div>
+    <div className="py-20 mx-24">
       <ProductDetail product={product} />
     </div>
   );
