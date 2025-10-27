@@ -12,7 +12,7 @@ export const products = [
     discount: "",
     imageURL: "/heights.jpeg",
     videoURL: "",
-    createtdAt: "",
+    createdAt: "",
   },
   {
     id: "2",
@@ -27,7 +27,7 @@ export const products = [
     discount: "",
     imageURL: "/mylove.jpeg",
     videoURL: "",
-    createtdAt: "",
+    createdAt: "",
   },
   {
     id: "3",
@@ -42,7 +42,7 @@ export const products = [
     discount: "",
     imageURL: "/slide.jpeg",
     videoURL: "",
-    createtdAt: "",
+    createdAt: "",
   },
   {
     id: "4",
@@ -57,6 +57,6 @@ export const products = [
     discount: "",
     imageURL: "/dance.jpeg",
     videoURL: "",
-    createtdAt: "",
+    createdAt: "",
   },
 ];

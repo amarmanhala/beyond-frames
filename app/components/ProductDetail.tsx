@@ -1,22 +1,15 @@
+"use client"
+
+import { Product } from "@/types/product";
 import Image from "next/image";
 
-interface Product {
-  id: string;
-  name: string;
-  description: string;
-  slug: string;
-  price: string;
-  size: {
-    1: string;
-    2: string;
-  };
-  discount: string;
-  imageURL: string;
-  videoURL: string;
-  createtdAt: string;
-}
-
 const ProductDetail = ({ product }: { product: Product }) => {
+
+  const handleAddToCart = () => {
+    console.log("added");
+    
+  }
+
   return (
     <div className="grid grid-cols-2 w-full  gap-12">
       <div className=" flex justify-center">
@@ -30,24 +23,24 @@ const ProductDetail = ({ product }: { product: Product }) => {
       <div className=" flex items-center">
         <div className="px-8">
           <h2 className="text-4xl mb-6">{product.name}</h2>
-          <p className="mb-8">
-            {product.description}
-          </p>
+          <p className="mb-8">{product.description}</p>
           <span className="text-2xl font-bold">{product.price}</span>
           <div className="pt-8 flex space-x-4">
-            <select defaultValue="1" style={{ paddingRight: '32px' }} className="px-4 py-3 text-base border rounded
-  appearance-none
-  cursor-pointer
-  focus:outline-none
-  ">{Array.from({ length: 100 }, (_, i) => (
-  <option key={i + 1} value={i + 1}>
-    {i + 1}
-  </option>
-))} </select>
+            <select
+              defaultValue="1"
+              style={{ paddingRight: "32px" }}
+              className="px-4 py-3 text-base border rounded appearance-none cursor-pointer focus:outline-none"
+            >
+              {Array.from({ length: 100 }, (_, i) => (
+                <option key={i + 1} value={i + 1}>
+                  {i + 1}
+                </option>
+              ))}{" "}
+            </select>
             <button className="bg-black text-lg text-white px-8 py-4 rounded">
               Add to Cart
             </button>
-            <button className="bg-black text-lg text-white px-8 py-4 rounded">
+            <button className="bg-black text-lg text-white px-8 py-4 rounded" onClick={handleAddToCart}>
               Buy Now
             </button>
           </div>
