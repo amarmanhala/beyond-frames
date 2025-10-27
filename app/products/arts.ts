@@ -1,8 +1,9 @@
 export const products = [
   {
     id: "1",
-    description: "The Heights",
+    name: "The Heights",
     slug: "the-heights",
+    description: "A stunning aerial view capturing the majestic beauty of towering landscapes. This piece brings a sense of elevation and perspective to any space, perfect for those who appreciate dramatic natural vistas.",
     price: "$25",
     size: {
       1: "8 X 12",
@@ -15,8 +16,9 @@ export const products = [
   },
   {
     id: "2",
-    description: "My Love",
+    name: "My Love",
     slug: "my-love",
+    description: "An intimate and heartfelt artistic expression that celebrates romance and connection. This emotionally evocative piece adds warmth and tenderness to your living space, ideal for bedrooms or personal areas.",
     price: "$25",
     size: {
       1: "8 X 12",
@@ -29,8 +31,9 @@ export const products = [
   },
   {
     id: "3",
-    description: "Slide",
+    name: "Slide",
     slug: "slide",
+    description: "A dynamic composition capturing the joy and movement of playful moments. This energetic artwork brings a sense of fun and nostalgia, making it perfect for family spaces or creative environments.",
     price: "$25",
     size: {
       1: "8 X 12",
@@ -43,8 +46,9 @@ export const products = [
   },
   {
     id: "4",
-    description: "Dancing Girl",
+    name: "Dancing Girl",
     slug: "dancing-girl",
+    description: "A graceful depiction of movement and expression through dance. This elegant piece captures the fluidity and passion of motion, bringing life and artistic sophistication to any room.",
     price: "$25",
     size: {
       1: "8 X 12",

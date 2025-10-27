@@ -10,7 +10,7 @@ const Products = () => {
       {products.map((product) => {
         return (
           <div key={product.id} className=" flex items-center justify-center">
-            <ProductCard imageURL={product.imageURL} description={product.description} slug={slugify(product.description)} />
+            <ProductCard imageURL={product.imageURL} name={product.name} slug={product.slug} />
           </div>
         );
       })}

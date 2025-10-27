@@ -2,6 +2,7 @@ import Image from "next/image";
 
 interface Product {
   id: string;
+  name: string;
   description: string;
   slug: string;
   price: string;
@@ -28,24 +29,26 @@ const ProductDetail = ({ product }: { product: Product }) => {
       </div>
       <div className=" flex items-center">
         <div className="px-8">
-          <h2 className="text-4xl mb-6">{product.description}</h2>
+          <h2 className="text-4xl mb-6">{product.name}</h2>
           <p className="mb-8">
-            Essential oil with antibacterial properties combine in our original
-            sweet-smelling formula. Super-fruit lilly packs a potent punch rich
-            in Vitamin C and antioxidants, while the menthol hit of Eucalyptus
-            and Tea Tree is tempered by Peru Balsam.
+            {product.description}
           </p>
           <span className="text-2xl font-bold">{product.price}</span>
-          <div className="pt-8">
-            <select>
-              {Array.from({ length: 100 }, (_, i) => (
-                <option key={i} value={i}>
-                  {i}
-                </option>
-              ))}
-            </select>
-            <button className="bg-black text-lg text-white px-6 py-4 rounded">
-              Buy it now
+          <div className="pt-8 flex space-x-4">
+            <select defaultValue="1" style={{ paddingRight: '32px' }} className="px-4 py-3 text-base border rounded
+  appearance-none
+  cursor-pointer
+  focus:outline-none
+  ">{Array.from({ length: 100 }, (_, i) => (
+  <option key={i + 1} value={i + 1}>
+    {i + 1}
+  </option>
+))} </select>
+            <button className="bg-black text-lg text-white px-8 py-4 rounded">
+              Add to Cart
+            </button>
+            <button className="bg-black text-lg text-white px-8 py-4 rounded">
+              Buy Now
             </button>
           </div>
         </div>
