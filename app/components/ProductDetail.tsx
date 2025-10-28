@@ -1,14 +1,17 @@
-"use client"
+"use client";
 
+import { useCart } from "@/store/CartContext";
 import { Product } from "@/types/product";
 import Image from "next/image";
 
 const ProductDetail = ({ product }: { product: Product }) => {
+  const cart = useCart();
 
   const handleAddToCart = () => {
     console.log("added");
-    
-  }
+    cart.addToCart(product);
+    console.log(cart.cart);
+  };
 
   return (
     <div className="grid grid-cols-2 w-full  gap-12">
@@ -37,10 +40,13 @@ const ProductDetail = ({ product }: { product: Product }) => {
                 </option>
               ))}{" "}
             </select>
-            <button className="bg-black text-lg text-white px-8 py-4 rounded">
+            <button
+              className="bg-black text-lg text-white px-8 py-4 rounded"
+              onClick={handleAddToCart}
+            >
               Add to Cart
             </button>
-            <button className="bg-black text-lg text-white px-8 py-4 rounded" onClick={handleAddToCart}>
+            <button className="bg-black text-lg text-white px-8 py-4 rounded">
               Buy Now
             </button>
           </div>
