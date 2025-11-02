@@ -1,7 +1,7 @@
 "use client";
 
 import { useCart } from "@/store/CartContext";
-import { Delete, DeleteIcon, Handbag, Trash, Trash2 } from "lucide-react";
+import { Handbag, Trash2 } from "lucide-react";
 
 export default function Page() {
   const cart = useCart();
@@ -28,21 +28,33 @@ export default function Page() {
 
           {/* Cart Items */}
           {cart.cart.map((item) => (
-            <div key={item.id} className="grid grid-cols-4 gap-4 border-b py-4">
+            <div key={item.product.id} className="grid grid-cols-4 gap-4 border-b py-4">
               <div className="flex col-span-2">
                 <div className="">
-                  <img src={item.imageURL} width={150} height={150}></img>
+                  <img src={item.product.imageURL} width={150} height={150}></img>
                 </div>
                 <div className="flex flex-col justify-center">
-                  <div>{item.name}</div>
-                  <div>{item.price}</div>
-                  <button onClick={() => cart.removeFromCart(item.id)}>
+                  <div>{item.product.name}</div>
+                  <div>{item.product.price}</div>
+                  <button onClick={() => cart.removeFromCart(item.product.id)}>
                     <Trash2></Trash2>
                   </button>
                 </div>
               </div>
-              <div>Quantity: {item.discount}</div>
-              <div className="text-right">{item.price}</div>
+              <div>Quantity:<div>
+                <select
+              defaultValue={item.quantity}
+              style={{ paddingRight: "32px" }}
+              className="px-4 py-3 text-base border rounded appearance-none cursor-pointer focus:outline-none"
+            >
+              {Array.from({ length: 100 }, (_, i) => (
+                <option key={i + 1} value={i + 1}>
+                  {i + 1}
+                </option>
+              ))}{" "}
+            </select>
+                </div></div>
+              <div className="text-right">{item.product.price}</div>
             </div>
           ))}
         </div>
