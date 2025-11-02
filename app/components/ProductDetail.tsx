@@ -3,6 +3,7 @@
 import { useCart } from "@/store/CartContext";
 import { Product } from "@/types/product";
 import Image from "next/image";
+import { ProductQuantity } from "./ProductQuantity";
 
 const ProductDetail = ({ product }: { product: Product }) => {
   const cart = useCart();
@@ -29,17 +30,7 @@ const ProductDetail = ({ product }: { product: Product }) => {
           <p className="mb-8">{product.description}</p>
           <span className="text-2xl font-bold">{product.price}</span>
           <div className="pt-8 flex space-x-4">
-            <select
-              defaultValue="1"
-              style={{ paddingRight: "32px" }}
-              className="px-4 py-3 text-base border rounded appearance-none cursor-pointer focus:outline-none"
-            >
-              {Array.from({ length: 100 }, (_, i) => (
-                <option key={i + 1} value={i + 1}>
-                  {i + 1}
-                </option>
-              ))}{" "}
-            </select>
+           <ProductQuantity id={product.id} />
             <button
               className="bg-black text-lg text-white px-8 py-4 rounded"
               onClick={handleAddToCart}

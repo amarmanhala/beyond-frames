@@ -8,6 +8,7 @@ export interface CartItem {
 export interface Cart {
   cart: CartItem[];
   addToCart: (product: Product) => void;
+  changeQuantity: (id: string, quantity: number) => void;
   removeFromCart: (id: string) => void;
   clearCart: () => void;
   cartCount: number;

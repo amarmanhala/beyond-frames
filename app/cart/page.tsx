@@ -4,6 +4,9 @@ import { useCart } from "@/store/CartContext";
 import { Handbag, Trash2 } from "lucide-react";
 
 export default function Page() {
+  const handleQuantityChange = (event: any, id: string) => {
+    cart.changeQuantity(id, event.target.value);
+  }
   const cart = useCart();
   return (
     <>
@@ -43,12 +46,13 @@ export default function Page() {
               </div>
               <div>Quantity:<div>
                 <select
+                onChange={(e) => handleQuantityChange(e, item.product.id)}
               defaultValue={item.quantity}
               style={{ paddingRight: "32px" }}
               className="px-4 py-3 text-base border rounded appearance-none cursor-pointer focus:outline-none"
             >
               {Array.from({ length: 100 }, (_, i) => (
-                <option key={i + 1} value={i + 1}>
+                <option key={i + 1} value={i + 1} >
                   {i + 1}
                 </option>
               ))}{" "}

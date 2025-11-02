@@ -45,7 +45,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const prod = cart.find((item) => item?.product?.id === product.id);
 
     if (prod) {
-    console.log(cart);
+      console.log(cart);
       // Item exists - increment quantity
       setCart((prevCart) =>
         prevCart.map((item) =>
@@ -68,6 +68,23 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCart([]);
   };
 
+  const changeQuantity = (id: string, quantity: number) => {
+    console.log("you are in heaven", id, quantity);
+    const prod = cart.find((item) => item?.product?.id === id);
+    
+    if(prod) {
+      setCart((prevCart) =>
+        prevCart.map((item) =>
+          item?.product?.id === id
+            ? { ...item, quantity: quantity }
+            : item
+        )
+      );
+    }
+    // Note: The else block with 'product' variable doesn't make sense here
+    // If you want to add a product when it doesn't exist, you need to pass the product as a parameter
+  };
+
   const cartCount = cart.length;
 
   return (
@@ -77,6 +94,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         addToCart,
         removeFromCart,
         clearCart,
+        changeQuantity,
         cartCount,
       }}
     >
